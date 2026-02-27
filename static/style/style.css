@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #000);
+    color: white;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid #00f0ff;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #00f0ff;
+    text-shadow: 0 0 15px #00f0ff;
+}
+
+.header p {
+    margin-top: 10px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* MAIN GRID */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Siempre una columna para apilado vertical */
+    gap: 60px;
+    /* Aumentado para mayor espacio entre tarjetas */
+}
+
+/* CARDS */
+.card {
+    background: rgba(15, 25, 35, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    /* Asegura que abarquen el ancho completo */
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* NEON VARIANTS */
+.neon-blue h2 {
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+.neon-purple h2 {
+    color: #b26cff;
+    text-shadow: 0 0 10px #b26cff;
+}
+
+/* IMAGES */
+.card img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+}
+
+/* BOTÓN */
+.btn {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00f0ff;
+    color: #0f2027;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #b26cff;
+    color: #e0e0e0;
+}
+
+/* EFECTO DE APARICIÓN */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Inicia desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* Aparece en posición normal */
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+p {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (min-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* Mantiene una columna incluso en pantallas grandes */
+    }
+}
+
+/* Estilos para el modal */
+.modal-content {
+    background: rgba(15, 25, 35, 0.9);
+    /* Fondo consistente con tarjetas */
+    color: #00f0ff;
+    /* Azul eléctrico para texto principal */
+    border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.modal-header .modal-title {
+    color: #00f0ff;
+    /* Título en azul eléctrico */
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+.modal-body .form-label,
+.modal-body .form-control::placeholder {
+    color: #00f0ff;
+    /* Etiquetas y placeholders */
+}
+
+.modal-body .form-control {
+    background: rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+    border: 1px solid #00f0ff;
+}
+
+.modal-body .alert {
+    color: #0f2027;
+    /* Texto en alertas para contraste */
+}
+
+
+/* CARRUSEL */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+    /* Espacio para flechas */
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s ease-in-out;
+    /* Transición suave */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 240, 255, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.carousel-arrow:hover {
+    background: rgba(0, 240, 255, 1);
+}
+
+.carousel-arrow.left {
+    left: 10px;
+}
+
+.carousel-arrow.right {
+    right: 10px;
+}
+
+/* Ajustes para tarjetas en carrusel */
+.card {
+    flex: 0 0 calc(33.333% - 20px);
+    /* Ancho para 3 tarjetas (33.333% menos gap) */
+    min-width: calc(33.333% - 20px);
+    /* Evita que se encojan */
+}
+
+/* Responsivo: En pantallas pequeñas, mostrar 1 o 2 tarjetas */
+@media (max-width: 900px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        /* 2 tarjetas */
+        min-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 0 0 100%;
+        /* 1 tarjeta */
+        min-width: 100%;
+    }
+}

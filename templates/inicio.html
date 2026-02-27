@@ -1,0 +1,64 @@
+ {% extends "base.html" %}
+
+{% block title %}Registro y Login{% endblock %}
+
+{% block header_title %}Registro y Login{% endblock %}
+{% block header_description %}Inicia sesión o crea una cuenta para acceder a funcionalidades personalizadas.{% endblock %}
+
+{% block content %}
+    <div class="card neon-blue reveal" style="max-width: 600px; margin: 0 auto;">
+        <h2 class="text-center">Gestión de Cuenta</h2>
+        <ul class="nav nav-tabs" id="accountTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Registro</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="accountTabContent">
+            <!-- Formulario de Login -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <form method="POST" action="/login" class="mt-3">
+                    <div class="mb-3">
+                        <label for="email_login" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email_login" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password_login" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password_login" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                </form>
+                {% if mensaje_login %}
+                    <div class="alert alert-info mt-3">{{ mensaje_login }}</div>
+                {% endif %}
+            </div>
+            <!-- Formulario de Registro -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <form method="POST" action="/register" class="mt-3">
+                    <div class="mb-3">
+                        <label for="nombre_register" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre_register" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email_register" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email_register" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password_register" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password_register" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                </form>
+                {% if mensaje_register %}
+                    <div class="alert alert-info mt-3">{{ mensaje_register }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

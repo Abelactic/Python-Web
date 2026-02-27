@@ -1,0 +1,37 @@
+[
+    {
+        "titulo": "Scratch como introduccion al desarrollo de videojuegos",
+        "descripcion": "Comence a desarrollar mis videojuegos usando la iconica plataforma de Scratch, en un principio fue dificil pero al comprender la logica de la programacion fue una base solida para mis siguientes iconicos proyectos",
+        "imagen_ruta": "proyectos/proyecto1.jpg"
+    },
+    {
+        "titulo": "Desarrollo Web",
+        "descripcion": "La pagina que estas observando fue creada desde cero, usando la libreria de flask es que puedo manejar los eventos y la informacion que se muestra ",
+        "imagen_ruta": "proyectos/proyecto2.jpg"
+    },
+    {
+        "titulo": "Videojuegos con Renpy y Pygame",
+        "descripcion": "Tambien durante el curso de Python pude desarrollar videojuegos usando el motor de Renpy y Pygame para diferentes tipos de juegos e historias, el cielo es el limite!!!!",
+        "imagen_ruta": "proyectos/proyecto3.jpg"
+    },
+    {
+        "titulo": "El Tio McAllister",
+        "descripcion": "Durante el desarrollo de un videojuego creamos personajes para  nuestras historias usando inteligencia artificial, el mas popular de este juego es nada mas ni nada menos que el Tio McAllister que peleo en Vietnam",
+        "imagen_ruta": "proyectos/5b3b327e-e853-462d-9037-323184291974.jpg"
+    },
+    {
+        "titulo": "Prueba",
+        "descripcion": "Esto es una prueba",
+        "imagen_ruta": "proyectos/piclumen-1742004767453.png"
+    },
+    {
+        "titulo": "Lorem ipsum",
+        "descripcion": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...\".",
+        "imagen_ruta": "proyectos/goodending.jpg"
+    },
+    {
+        "titulo": "algo algo",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+        "imagen_ruta": "proyectos/Kanarienvogel-768x512.jpg"
+    }
+]

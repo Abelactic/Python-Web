@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Galería de Proyectos{% endblock %}
+
+{% block header_title %}Galería de Proyectos Personales{% endblock %}
+{% block header_description %}Explora los proyectos de software desarrollados por los alumnos.{% endblock %}
+
+{% block content %}
+    <div class="carousel-container">
+        <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#9664;</button> <!-- Flecha izquierda -->
+        <div class="carousel-track">
+            {% for proyecto in proyectos %}
+                <div class="card neon-purple reveal">
+                    <img src="{{ url_for('static', filename=proyecto.imagen_ruta) }}" alt="{{ proyecto.titulo }}">
+                    <h2>{{ proyecto.titulo }}</h2>
+                    <p>{{ proyecto.descripcion }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-arrow right" onclick="moveCarousel(1)">&#9654;</button> <!-- Flecha derecha -->
+    </div>
+
+    <script>
+        let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.card');
+const cardsPerView = 3; 
+const totalCards = cards.length;
+let cardWidth = cards[0] ? cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight) * 2 : 0; // Ancho de una tarjeta + márgenes
+
+function moveCarousel(direction) {
+    const maxIndex = totalCards - cardsPerView; 
+    
+    currentIndex += direction;
+    
+    // Lógica de bucle infinito
+    if (currentIndex < 0) {
+        currentIndex = maxIndex;
+    } else if (currentIndex > maxIndex) {
+        currentIndex = 0;
+    }
+
+    const offset = -currentIndex * cardWidth; // Desplazamiento por una tarjeta individual
+    track.style.transform = `translateX(${offset}px)`;
+}
+
+// Inicializar para mostrar las primeras tarjetas y recalcular en resize
+window.addEventListener('resize', () => {
+    cardWidth = cards[0] ? cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight) * 2 : 0;
+    // Recalcular cardsPerView si es necesario (basado en CSS actual), pero para simplicidad asumimos fijo
+    moveCarousel(0);
+});
+    </script>
+{% endblock %}

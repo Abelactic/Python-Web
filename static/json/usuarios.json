@@ -1,0 +1,38 @@
+[
+    {
+        "nombre": "Melossa",
+        "email": "melossa@gmail.com",
+        "password": "12345678",
+        "rol": 2
+    },
+    {
+        "nombre": "Prof",
+        "email": "prof@gmail.com",
+        "password": "12345678",
+        "rol": 1
+    },
+    {
+        "nombre": "Malvavisca B",
+        "email": "malvaviscab12@gmail.com",
+        "password": "12345678",
+        "rol": 2
+    },
+    {
+        "nombre": "Rene",
+        "email": "rene@gmail.com",
+        "password": "12345678",
+        "rol": 2
+    },
+    {
+        "nombre": "Aza",
+        "email": "aza@gmail.com",
+        "password": "12345678",
+        "rol": 2
+    },
+    {
+        "nombre": "Chuy",
+        "email": "chuy@gmail.com",
+        "password": "12345678",
+        "rol": 2
+    }
+]
