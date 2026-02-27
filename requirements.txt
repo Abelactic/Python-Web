@@ -1,3 +1,6 @@
-
+pandas==2.3.3
 Flask==3.0.0
 gunicorn==25.1.0
+matplotlib==3.10.8
+matplotlib-inline==0.2.1
+seaborn==0.13.2
